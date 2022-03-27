@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: relative;
+    padding-top: 5pc;
+    display: flex;
+    justify-content: center;
+}
+
+.container input{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 40pc;
+    z-index: -1;
+    margin-right: 2px;
+}
+
+select{
+    border-radius: 5px;
+}
+
+.image{
+    z-index: -1;
+    margin-top: 3pc;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    flex-wrap: wrap;
+}
+
+.image-box{
+    padding-bottom: 5pc;
+    margin-right: 2pc;
+}
+
+.text-image{
+    box-shadow: 0 1px 0 2px rgba(0, 0, 0, 0.384);
+    padding: 20px;
+}
+
+.text-image h4{
+    margin-top: 2pc;
+}
+
+hr{
+    margin-bottom: 2pc;
+    width: 100%;
+}

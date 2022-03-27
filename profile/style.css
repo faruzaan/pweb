@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.blank{
+    height: 3pc;
+}
+
+.container{
+    padding: 3pc;
+}
+
+.container h1{
+    margin-left: 30%;
+}
+
+.left{
+    /* background-color: antiquewhite; */
+    width: 410px;
+    float: left;
+    height: 100%;
+    float: left;
+}
+
+.main{
+    margin-top: 2pc;
+    width: 70%;
+    float: left;
+    height: 100%;
+}
+
+.left-box{
+    padding: 2pc;
+}
+
+.profile-left{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5pc;
+    box-shadow: 0 2px 1px 0px rgba(126, 126, 126, 0.445), 0px 3px 1px 2px rgba(126, 126, 126, 0.445);
+}
+
+.profile-left span{
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+#st{
+    background-color: #777;
+    padding: 10px;
+    border-radius: 50%;
+    float: left;
+}
+
+.profile-left img{
+    position: relative;
+    top: 4px;
+}
+
+.profile-left hr{
+    margin-top: 2pc;
+    margin-left: 1pc;
+    width: 85%;
+    margin-bottom: 10px;
+}
+
+.profile-main{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 5pc;
+    box-shadow: 0 2px 1px 0px rgba(126, 126, 126, 0.445), 0px 3px 1px 2px rgba(126, 126, 126, 0.445);
+    display: flex;
+}
+
+.profile-picture-main{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: justify;
+    font-weight: 100;
+}
+
+.profile-picture-main button{
+    width: 100%;
+    padding: 6px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-weight: 100;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.biodata-main{
+    padding-left: 20px;
+    padding-bottom: 5pc;
+    margin-left: 2pc;
+}
+
+.biodata-main td{
+    padding-top: 15px;
+    font-weight: 200;
+}
+
+.biodata-main h2{
+    padding-top: 20px;
+}
+
+.td-blank{
+    padding-left: 3pc;
+}

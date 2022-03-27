@@ -1,0 +1,132 @@
+body{
+	font-family: sans-serif;
+	background-image: url("img/WhatsApp\ Image\ 2022-03-27\ at\ 11.54.31.jpeg");
+	position:relative;
+	width: 900px;
+	margin:auto;
+	
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	
+}
+.col{
+	column-count: 2;
+}
+.first_name{
+	float: left;
+}
+
+.last_name{
+	float: right;
+}
+ 
+h1{
+	text-align: center;
+	font-weight: 300px;
+}
+ 
+.tulisan_login{
+	text-align: center;
+    font-family: 'Roboto';
+	font-style: normal;
+
+}
+ 
+.kotak_regist{
+	width: 500px;
+	margin: 80px auto;
+	padding: 30px 20px;
+    border-radius: 30px;
+}
+
+.kotak_login{
+	width: 350px;
+	margin: 80px auto;
+	padding: 30px 20px;
+    border-radius: 30px;
+}
+ 
+label{
+	font-size: 9pt;
+}
+ 
+.form_login{
+	background: #FFFFFF;
+    border: 2px solid #BBBABA;
+    border-radius: 15px;
+	box-sizing : border-box;
+	width: 100%;
+	padding: 20px;
+	font-weight: 70px;
+	margin-bottom: 40px;
+	
+}
+
+.form_regist{ 
+    background: #FFFFFF;
+    border: 2px solid #BBBABA;
+    border-radius: 15px;
+	box-sizing : border-box;
+	width: 100%;
+	padding: 20px;
+	font-weight: 70px;
+	margin-bottom: 15px;
+	justify-content: space-around;
+}
+ 
+.tombol_login{
+    background: #B39E8B;
+	opacity: 0.75;
+	font-size: 11pt;
+	width: 40%;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+    margin-bottom: 20;
+}
+
+.tombol_regist{
+	background: #B39E8B;
+	opacity: 0.75;
+	font-size: 11pt;
+	width: 20%;
+	border: none;
+	border-radius: 7px;
+	padding: 10px;
+    margin-bottom: 20;
+    
+}
+ 
+.link{
+	color: #232323;
+	text-decoration: none;
+	font-size: 10pt;
+}
+
+h6{
+	color :#7c7b7b;
+	padding: 10px 250px;
+	margin: -20px auto;
+	width: 350px;
+	
+
+}
+
+.container{
+	 background-color: #FFFFFF;
+	 Width: 75%;
+	 Height: 85%;
+	 Margin: auto;
+	 border-radius: 30px;
+	
+}
+
+
+
+
+
+
+
+

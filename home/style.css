@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.bg-img{
+    display: flex;
+}
+
+.bg-left{
+    background-image: url('../home/img/Bg_1.png');
+    width: 68%;
+}
+
+.bg-right{
+    background-image: url('../home/img/bg_img4.jpg');
+    background-size: cover;
+    width: 32%;
+    animation-name: background;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.text-left{
+    /* background-color: aliceblue; */
+    margin-top: 7.5pc;
+    padding-left: 10pc;
+    width: 60%;
+}
+
+.text-left h1{
+    font-size: 78px;
+    color: #ddbb9b;
+    margin-bottom: 4pc;
+}
+
+.text-left p{
+    font-size: large;
+    color: #ddbb9b;
+}
+
+.text-left hr{
+    display: block;
+    border-top: 2px;
+    border-bottom: 2px solid rgb(224, 219, 191) ;
+    margin-top: 3pc;
+    margin-bottom: 5pc;
+}
+
+.text-desc-left{
+    display: flex;
+    width: 900px;
+}
+
+.text-desc-left h2{
+    font-size: 52px;
+}
+
+.text{
+    margin-right: 5pc;
+    color: #ddbb9b;
+    width: 200px;
+}
+
+.text h3{
+    color: white;
+    margin-top: 2pc;
+    font-size: 24px;
+    padding-bottom: 3pc;
+}
+
+.text p{
+    padding-bottom: 4pc;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 2pc;
+}
+
+.content{
+    text-align: center;
+    padding-top: 12pc;
+    width: 80%;
+}
+
+.content h1{
+    font-size: 48px;
+    word-spacing: 5px;
+    text-shadow:  2px 2px rgba(0, 0, 0, 0.432);
+    text-transform: uppercase;
+    color: #815328;
+}
+
+.content-detail{
+    margin-top: 6pc;
+    display: flex;
+    justify-content:space-between;
+}
+
+.detail{
+    width: 300px;
+}
+
+.detail h2,p{
+    margin-top: 2pc;
+}
+
+.detail-text{
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.432), 0 2px 4px 1px rgba(0, 0, 0, 0.132);
+    width: 250px;
+    padding-top: 1pc;
+    padding-bottom: 1pc;
+    margin-left: 22px;
+    text-align: center;
+}
+
+.row{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 10pc;
+}
+
+.desc-tool{
+    text-align: left;
+    width: 550px;
+}
+
+.text-light{
+    margin-top: 1pc;
+    font-weight: 100;
+    color: #00000060;
+}
+
+.price{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.larger{
+    padding-top: 2pc;
+    font-size: large;
+    word-spacing: 5px;
+    text-align: justify;
+}
+
+.btn-desc{
+    text-align: left;
+}
+
+.btn-desc button{
+    background-color: #ddbb9b;
+    width: 125px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 3pc;
+    margin-left: 1pc;
+}
+
+#order{
+    background-color: #1f140c;
+    color: white;
+}
+
+#item1{
+    grid-column: 1 /span 3;
+    grid-row: 1 /span 2;
+    background-color: aliceblue;
+}
+
+#copyright{
+    display: block;
+    border-top: 2px;
+    width: 70pc;
+    border-bottom: 2px solid rgb(0, 0, 0) ;
+    margin-top: 3pc;
+}
+
+@keyframes background {
+    20%{
+        background-image: url('../home/img/bg_img1.jpg');
+        background-size: cover;
+    }
+    40%{
+        background-image: url('../home/img/bg_img2.jpg');
+        background-size: cover;
+    }
+    60%{
+        background-image: url('../home/img/bg_img3.jpg');
+        background-size: cover;
+    }
+    80%{
+        background-image: url('../home/img/bg_img6.jpg');
+    }
+}
+
+button{
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    padding-top: 50px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    position: relative; 
+    background-color: white;
+    padding: 20px; 
+    margin: auto; 
+    width: 75%;  
+    height: 320px;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.close-btn {
+    float: right; 
+    color: lightgray; 
+    font-size: 24px;  
+    font-weight: bold;
+}
+.close-btn:hover {
+    color: darkgray;
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}  
+
+.modal h3{
+    padding-bottom: 1pc;
+}
+
+.modal img{
+    padding: 10px;
+    position: relative;
+    float: left;
+}
+
+.modal-text{
+    padding-top: 2pc;
+    margin-left: 2pc;
+    float:left;
+    width: 700px;
+}
+
+.modal td{
+    padding-top: 10px;
+}
