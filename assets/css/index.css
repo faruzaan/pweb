@@ -9,12 +9,12 @@
 }
 
 .bg-left{
-    background-image: url('../home/img/Bg_1.png');
+    background-image: url('../img/Bg_1.png');
     width: 68%;
 }
 
 .bg-right{
-    background-image: url('../home/img/bg_img4.jpg');
+    background-image: url('../img/bg_img4.jpg');
     background-size: cover;
     width: 32%;
     animation-name: background;
@@ -184,19 +184,19 @@
 
 @keyframes background {
     20%{
-        background-image: url('../home/img/bg_img1.jpg');
+        background-image: url('../img/bg_img1.jpg');
         background-size: cover;
     }
     40%{
-        background-image: url('../home/img/bg_img2.jpg');
+        background-image: url('../img/bg_img2.jpg');
         background-size: cover;
     }
     60%{
-        background-image: url('../home/img/bg_img3.jpg');
+        background-image: url('../img/bg_img3.jpg');
         background-size: cover;
     }
     80%{
-        background-image: url('../home/img/bg_img6.jpg');
+        background-image: url('../img/bg_img6.jpg');
     }
 }
 

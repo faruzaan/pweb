@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Registrasi</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
     </head>
 
     <body>
@@ -32,21 +32,5 @@
                 </form>
             </div>
         </div>
-        <script>
-            if (sessionStorage.getItem("Password") != null) {
-                alert("Registrasi telah berhasil, silahkan login dengan akun anda")
-                window.location.href = "login.html";
-            }
-            console.log(sessionStorage.getItem("Username"));
-            function resgist()
-            {
-                sessionStorage.setItem("FirstName", document.forms["regis"]["first_name"].value);
-                sessionStorage.setItem("LastName", document.forms["regis"]["last_name"].value);
-                sessionStorage.setItem("Email", document.forms["regis"]["email"].value);
-                sessionStorage.setItem("Username", document.forms["regis"]["username"].value);
-                sessionStorage.setItem("Password", document.forms["regis"]["password"].value);
-                window.location.href = "login.html";
-            }   
-        </script>
     </body>
 </html>

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="header">
         <header>
-            <a href="../home/index.html"><img src="../img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
+            <a href="../home/index.html"><img src="../assets/img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
             <nav>
                 <a href="../katalog/index.html" class="link">Product</a>
                 <a href="#" class="link">Category</a>
@@ -20,7 +20,7 @@
             </nav>
             <div class="profile">
                 <img src="../img/shopping-cart.png" alt="keranjang" width="30px">
-                <a href="../profile/index.html"><img src="../img/profile-logo.png" alt="profile logo" width="25px"></a>
+                <a href="../profile/index.html"><img src="../assets/img/profile-logo.png" alt="profile logo" width="25px"></a>
             </div>
         </header>
     </div>
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="image">
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="image-box">
-                <img src="../home/img/kopi1.png" alt="">
+                <img src="../assets/img/kopi1.png" alt="">
                 <div class="text-image">
                     <h3>Arabika Java</h3>
                     <p>Medium Body, Nutty, Berry</p>

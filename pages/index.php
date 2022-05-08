@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../base.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -14,7 +14,7 @@
 <body>
     <div class="header">
         <header>
-            <a href="index.html"><img src="../img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
+            <a href="index.html"><img src="../assets/img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
             <nav>
                 <a href="../katalog/index.html" class="link">Product</a>
                 <a href="#" class="link">Category</a>
@@ -22,8 +22,8 @@
                 <a href="#" class="link">Contact</a>
             </nav>
             <div class="profile">
-                <img src="../img/shopping-cart.png" alt="keranjang" width="30px">
-                <a href="../profile/index.html"><img src="../img/profile-logo.png" alt="profile logo" width="25px"></a>
+                <img src="../assets/img/shopping-cart.png" alt="keranjang" width="30px">
+                <a href="../profile/index.html"><img src="../assets/img/profile-logo.png" alt="profile logo" width="25px"></a>
             </div>
         </header>
     </div>
@@ -65,17 +65,17 @@
 
         <div class="content-detail">
             <div class="detail">
-                <img src="../home/img/icon1.png" alt="" width="160px" height="160px">
+                <img src="../assets/img/icon1.png" alt="" width="160px" height="160px">
                 <h2>Premium Quality</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div class="detail">
-                <img src="../home/img/icon2.png" alt="" width="160px" height="160px">
+                <img src="../assets/img/icon2.png" alt="" width="160px" height="160px">
                 <h2>Premium Quality</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div class="detail">
-                <img src="../home/img/icon3.png" alt="" width="160px" height="160px">
+                <img src="../assets/img/icon3.png" alt="" width="160px" height="160px">
                 <h2>Premium Quality</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
@@ -88,28 +88,28 @@
         
         <div class="content-detail">
             <div class="detail">
-                <img src="../home/img/kopi1.png" alt="" width="250px" height="250px">
+                <img src="../assets/img/kopi1.png" alt="" width="250px" height="250px">
                 <div class="detail-text">
                     <h2>Arabika Java</h2>
                     <p>nutty, full body, chocolate</p>
                 </div>
             </div>
             <div class="detail">
-                <img src="../home/img/kopi1.png" alt="" width="250px" height="250px">
+                <img src="../assets/img/kopi1.png" alt="" width="250px" height="250px">
                 <div class="detail-text">
                     <h2>Arabika Java</h2>
                     <p>nutty, full body, chocolate</p>
                 </div>
             </div>
             <div class="detail">
-                <img src="../home/img/kopi1.png" alt="" width="250px" height="250px">
+                <img src="../assets/img/kopi1.png" alt="" width="250px" height="250px">
                 <div class="detail-text">
                     <h2>Arabika Java</h2>
                     <p>nutty, full body, chocolate</p>
                 </div>
             </div>
             <div class="detail">
-                <img src="../home/img/kopi1.png" alt="" width="250px" height="250px">
+                <img src="../assets/img/kopi1.png" alt="" width="250px" height="250px">
                 <div class="detail-text">
                     <h2>Arabika Java</h2>
                     <p>nutty, full body, chocolate</p>
@@ -123,7 +123,7 @@
 
             <div class="content-detail row">
                 <div class="detail" id="item1">
-                    <img src="../home/img/tools.png" alt="">
+                    <img src="../assets/img/tools.png" alt="">
                 </div>
                 <div class="detail desc-tool">
                     <h3>V60 Dripper</h3>
@@ -150,7 +150,7 @@
     <div class="modal">
         <div class="modal-content">
             <span class="close-btn" style="cursor: pointer;">&times;</span>
-            <img src="../home/img/tools.png" alt="" width="300px">
+            <img src="../assets/img/tools.png" alt="" width="300px">
             <div class="modal-text">
                 <h3>V60 Dripper</h3>
                 <table>
