@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Registrasi</title>
-        <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/credential.css">
     </head>
 
     <body>
@@ -24,7 +24,7 @@
                     <br>
                     <center>
                         <p> Have a account?
-                            <a href="login.html">Login here</a>
+                            <a href="login.php">Login here</a>
                         </p>
                         <div id="results"></div>
                     </center>

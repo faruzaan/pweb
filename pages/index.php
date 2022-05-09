@@ -14,16 +14,16 @@
 <body>
     <div class="header">
         <header>
-            <a href="index.html"><img src="../assets/img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
+            <a href="index.php"><img src="../assets/img/belikopi.png" alt="logo belikopi" class="logo" height="30px"></a>
             <nav>
-                <a href="../katalog/index.html" class="link">Product</a>
+                <a href="katalog.php" class="link">Product</a>
                 <a href="#" class="link">Category</a>
                 <a href="#feature" class="link">Feature</a>
                 <a href="#" class="link">Contact</a>
             </nav>
             <div class="profile">
                 <img src="../assets/img/shopping-cart.png" alt="keranjang" width="30px">
-                <a href="../profile/index.html"><img src="../assets/img/profile-logo.png" alt="profile logo" width="25px"></a>
+                <a href="profile.php"><img src="../assets/img/profile-logo.png" alt="profile logo" width="25px"></a>
             </div>
         </header>
     </div>
