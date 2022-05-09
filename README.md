@@ -1,5 +1,6 @@
 # pweb
-[UTS] Mata Kuliah Pemograman Web
+Tugas Mata Kuliah Pemograman Web
+
 2005140 - Muhammad Farhan Fauzaan
 2003164 - Bagus Syamsu Rahmattullah
 2001982 - Balqis Aqilah Syahira

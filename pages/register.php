@@ -9,7 +9,6 @@
         <div class="container">
             <div class="kotak_regist">
             <h1>BELIKOPI.</h1>
-
                 <form id="regis" action="">
                     <div class="col">
                         <input type="text" name="first_name" class="first_name form_regist" placeholder="First Name">
