@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+
+nav {
+    position: relative !important;
+    background-color: #1d110a;
+    z-index: 2;
+}
+
+
+nav a {
+    margin-left: 3pc;
+    font-size: larger;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) !important;
+}
+
+.footer {
+    padding: 0;
+    position: relative;
+    bottom: 0;
+    height: 12pc;
+    background-color: #644117;
+}
+
+#drop-kategori:hover~.drop {
+    display: block;
+    z-index: 1;
+}
+
+
+.drop {
+    display: none;
+    background-color: #1d110a;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 10vw;
+    margin-right: 0;
+    z-index: -1;
+}
+
+.drop:hover {
+    display: block;
+    z-index: 1;
+}
+
+
+.drop a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+
+a:hover {
+    color: rgb(117, 117, 117) !important;
+}

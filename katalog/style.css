@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.kategori {
+    background-color: #a5a09d6f;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+}
+
+.kategori a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.451);
+}
+
+.kategori a:hover {
+    color: #B39E8B;
+}
+
+
+nav {
+    position: relative !important;
+    background-color: #1d110a;
+    z-index: 2;
+}
+
+
+nav a {
+    margin-left: 3pc;
+    font-size: larger;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) !important;
+}
+
+
+.active- {
+    color: #000 !important;
+    opacity: 1 !important;
+}
+
+img {
+    cursor: pointer;
+}
+
+.btn-brown {
+    background-color: #a5a09d !important;
+}
+
+#img-modal {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+}
+
+
+.footer {
+    padding: 0;
+    position: relative;
+    bottom: 0;
+    height: 12pc;
+    background-color: #644117;
+}
+
+.modal-custom {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.245);
+    position: absolute;
+    display: none;
+    z-index: 2;
+}
+
+.main-modal {
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    z-index: 10;
+}
+
+.show {
+    display: inherit;
+}
+
+.lockscroll {
+    overflow: hidden;
+}
+
+.counter {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #a5a09d6f;
+}
+
+.counter:hover {
+    border: 1px solid #6441178d;
+}
+
+#counter {
+    width: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#drop-kategori:hover~.drop {
+    display: block;
+    z-index: 1;
+}
+
+
+.drop {
+    display: none;
+    background-color: #1d110a;
+    padding-bottom: 10px;
+    position: absolute;
+    width: 10vw;
+    margin-right: 0;
+    z-index: -1;
+}
+
+.drop:hover {
+    display: block;
+    z-index: 1;
+}
+
+
+.drop a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+
+a:hover {
+    color: rgb(117, 117, 117) !important;
+}

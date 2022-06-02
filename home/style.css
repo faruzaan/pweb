@@ -1,0 +1,166 @@
+.left {
+    background-image: url('../home/img/Bg_1.png');
+    background-size: cover;
+}
+
+.right {
+    background-image: url('../home/img/bg_img4.jpg');
+    background-size: cover;
+    animation-name: background;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+.text-left {
+    /* background-color: aliceblue; */
+    margin-top: 7.5pc;
+    padding-left: 10pc;
+    width: 60%;
+}
+
+.text-left h1 {
+    font-size: 78px;
+    color: #ddbb9b;
+    margin-bottom: 4pc;
+}
+
+.text-left p {
+    font-size: large;
+    color: #ddbb9b;
+}
+
+.text-left hr {
+    display: block;
+    border-top: 2px;
+    border-bottom: 2px solid rgb(224, 219, 191);
+    margin-top: 3pc;
+    margin-bottom: 5pc;
+}
+
+.text-desc-left {
+    display: flex;
+    width: 900px;
+}
+
+.text-desc-left h2 {
+    font-size: 52px;
+}
+
+.text {
+    margin-right: 5pc;
+    color: #ddbb9b;
+    width: 200px;
+}
+
+.text h3 {
+    color: white;
+    margin-top: 2pc;
+    font-size: 24px;
+    padding-bottom: 3pc;
+}
+
+.text p {
+    padding-bottom: 4pc;
+}
+
+.title-text {
+    font-size: 48px;
+    word-spacing: 5px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.432);
+    text-transform: uppercase;
+    color: #815328;
+    text-align: center;
+}
+
+.larger {
+    padding-top: 2pc;
+    font-size: large;
+    word-spacing: 5px;
+    text-align: justify;
+}
+
+.btn-desc {
+    text-align: left;
+}
+
+.btn-desc button {
+    background-color: #ddbb9b;
+    width: 125px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 3pc;
+    margin-left: 1pc;
+}
+
+#order {
+    background-color: #1f140c;
+    color: white;
+}
+
+#copyright {
+    display: block;
+    border-top: 2px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-top: 3pc;
+}
+
+@keyframes background {
+    20% {
+        background-image: url('../home/img/bg_img1.jpg');
+        background-size: cover;
+    }
+
+    40% {
+        background-image: url('../home/img/bg_img2.jpg');
+        background-size: cover;
+    }
+
+    60% {
+        background-image: url('../home/img/bg_img3.jpg');
+        background-size: cover;
+    }
+
+    80% {
+        background-image: url('../home/img/bg_img6.jpg');
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal h3 {
+    padding-bottom: 1pc;
+}
+
+.modal img {
+    padding: 10px;
+    position: relative;
+    float: left;
+}
+
+.modal-text {
+    padding-top: 2pc;
+    margin-left: 2pc;
+    float: left;
+    width: 700px;
+}
+
+.modal td {
+    padding-top: 10px;
+}
