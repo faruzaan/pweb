@@ -1,3 +1,38 @@
+
+<?php 
+ 
+include '../config.php';
+ 
+session_start();
+ 
+// if (isset($_SESSION['username'])) {
+//     header("Location: ../home/index.php");
+// }
+ 
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+ 
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($mysqli, $sql);
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['cash'] = $row['cash'];
+        $_SESSION['nama'] = $row['nama'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['cash'] = $row['cash'];
+        $_SESSION['tgl_lahir'] = $row['tgl_lahir'];
+        $_SESSION['gender'] = $row['gender'];
+        $_SESSION['notelp'] = $row['notelp'];
+        header("Location: ../home/index.php");
+    } else {
+        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+    }
+}
+ 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +45,10 @@
 	style="width: 100vw; height: 100vh; background-image: url('./img/WhatsApp\ Image\ 2022-03-27\ at\ 11.54.31.jpeg'); background-size: cover;">
 	   <div class="container w-50 h-50 rounded p-5 glass">
 		   <h1>BELIKOPI.</h1>
-			<form id="login" action="">
+			<form id="login" action="" method="post">
 				<div class ="row mt-3">
 					<div class="col">
-						<input type="text" name="username" class="form-control" placeholder="Username / Email">
+						<input type="text" name="email" class="form-control" placeholder="Email">
 					</div>	
 				<div>
 				<div class="row mt-3">
@@ -25,13 +60,13 @@
 					<div class="col">
 						<a href="forgotpassword.html" onclick="forgotpassword()">Forgot Password?</a>
 						<center>
-							<button type="submit" class="btn btn-primary w-50" onclick="validateForm()">Login</button>
+							<button name="submit" class="btn btn-primary w-50" onclick="validateForm()">Login</button>
 						</center>
 					</div>
 				</div>
 				<div class ="row mt-3">
 					<div class="col">
-						<center><a href="register.html">Create Account</a></center>
+						<center><a href="register.php">Create Account</a></center>
 					</div>
 				</div>
 			</form>

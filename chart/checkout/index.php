@@ -1,3 +1,46 @@
+<?php
+     
+include '../../config.php';
+ 
+session_start();
+
+$iduser = $_SESSION['id'];
+
+if (isset($_GET['checkout'])) {
+    $total_bayar = $_SESSION['total_bayar'] + 2000;
+    $cash = $_SESSION['cash'];
+    $cash -= $total_bayar;
+    $_SESSION['cash'] = $cash;
+    $sql = "UPDATE users SET cash='$cash' WHERE id='$iduser'";
+    $result = mysqli_query($mysqli, $sql);
+
+    $idcart = $_SESSION['id_cart'];
+    
+
+    $cariidpenjualan = mysqli_query($mysqli, "SELECT COUNT(*) FROM tb_penjualan");
+    $idpenjualan1 = mysqli_fetch_array($cariidpenjualan);
+    $idpenjualan = $idpenjualan1[0]+1;
+
+    $cariidalamat = mysqli_query($mysqli, "SELECT id FROM tb_alamat WHERE id_user = '$iduser'");
+    $idalamat1 = mysqli_fetch_array($cariidalamat);
+    $idalamat = $idalamat1[0];
+
+    $insertpenjualan = mysqli_query($mysqli, "INSERT INTO tb_penjualan(id,id_user,jns_pembayaran,id_alamat) VALUES ('$idpenjualan','$iduser','Cash','$idalamat')");
+
+    $caricart = mysqli_query($mysqli, "SELECT * FROM tb_detail_cart WHERE id_cart = '$idcart'");
+    while ($cart = mysqli_fetch_array($caricart)){
+        
+        $idbarang = $cart['id_barang'];
+        echo $idbarang;
+        $sql = "INSERT INTO tb_detail_penjualan(id_penjualan,id_barang,jml) VALUES ('$idpenjualan','$idbarang','1')";
+        mysqli_query($mysqli, $sql);
+    }
+
+    $result = mysqli_query($mysqli, "DELETE FROM tb_detail_cart WHERE id_cart=$idcart");
+    header('Location: ../index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,8 +89,8 @@
                     class="row p-3 d-flex justify-content-between border-bottom border-5"
                 >
                     <span class="w-auto">
-                        <h6>Pakai Voucher Anda</h6>
-                        <p class="fw-light">Rp.201783</p>
+                        <h6>Pakai Cash Anda</h6>
+                        <p class="fw-light">Rp.<?= $_SESSION['cash'] ?></p>
                     </span>
                     <div
                         class="form-check form-switch w-auto d-flex align-items-center"
@@ -91,11 +134,11 @@
                         <p class="fw-semibold text-secondary">
                             Total Belanjaan
                         </p>
-                        <p class="fw-semibold text-secondary">Rp. 0179798</p>
+                        <p class="fw-semibold text-secondary">Rp. <?= $_SESSION['total_bayar'] ?></p>
                     </span>
                     <span class="d-flex justify-content-between mt-2">
                         <p class="fw-semibold text-secondary">Biaya Admin</p>
-                        <p class="fw-semibold text-secondary">Rp. 0179798</p>
+                        <p class="fw-semibold text-secondary">Rp. 2000</p>
                     </span>
                 </div>
                 <div
@@ -103,15 +146,15 @@
                 >
                     <span class="w-auto align-items-centers d-flex">
                         <h6>Total Bayar :</h6>
-                        <p class="ms-2 fw-light">Rp. 219824</p>
+                        <p class="ms-2 fw-light">Rp. <?= $_SESSION['total_bayar']+2000 ?></p>
                     </span>
-                    <button class="btn btn-brown w-25">Bayar</button>
+                    <a href="?checkout" class="btn btn-brown w-25">Bayar</a>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark w-100">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../../home/index.html"
+                <a class="navbar-brand" href="../../home/index.php"
                     ><img
                         src="../../img/belikopi.png"
                         alt="logo belikopi"
@@ -136,7 +179,7 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a
-                                href="../../katalog/index.html"
+                                href="../../katalog/index.php"
                                 class="nav-link active"
                                 >Product</a
                             >
@@ -149,11 +192,11 @@
                                 >Category</a
                             >
                             <div class="drop">
-                                <a href="../../kategori/index.html?a=kopi"
+                                <a href="../../kategori/index.php?a=kopi"
                                     >Kopi</a
                                 >
                                 <br />
-                                <a href="../../kategori/index.html?a=peralatan"
+                                <a href="../../kategori/index.php?a=peralatan"
                                     >Peralatan Kopi</a
                                 >
                             </div>
@@ -162,7 +205,7 @@
                     <div>
                         <span>
                             <a
-                                href="../index.html"
+                                href="../index.php"
                                 style="text-decoration: none"
                             >
                                 <img
@@ -173,7 +216,7 @@
                             </a>
                         </span>
                         <span>
-                            <a href="../../profile/index.html"
+                            <a href="../../profile/index.php"
                                 ><img
                                     src="../../img/profile-logo.png"
                                     alt="profile logo"
@@ -181,7 +224,7 @@
                             /></a>
                         </span>
                         <a
-                            href="../loginregist/login.html"
+                            href="../loginregist/login.php"
                             style="
                                 color: #fff;
                                 cursor: pointer;
@@ -206,21 +249,24 @@
                             Alamat pengiriman belum diatur
                         </div> -->
                         <div class="container-fluid">
-                            <p><b>Bagus Syamsu</b> (Toko Bangunan Barokah)</p>
-                            <p>0898741832</p>
+                            <p><b><?= $_SESSION['nama'] ?></b> </p>
+                            <p><?= $_SESSION['notelp'] ?></p>
                             <p class="fw-light">
-                                Jl. Cigugur Girang, Kec. Parongpong, Kabupaten
-                                Bandung Barat, Jawa Barat, 40559 [Tokopedia
-                                Note: No. 24 03/18 ] Parongpong, Kab. Bandung
-                                Barat, 40559
+                                <?php
+                                    $sql = "SELECT alamat FROM tb_alamat WHERE id_user = '$iduser'";
+                                    $result = mysqli_query($mysqli, $sql);
+                                    while($hasil = mysqli_fetch_array($result)){
+                                        echo $hasil[0];
+                                    }
+                                ?>
                             </p>
                         </div>
                     </div>
-                    <div class="row p-3">
+                    <!-- <div class="row p-3">
                         <button class="btn btn-brown" id="tambah">
                             Tambah Alamat Baru
                         </button>
-                    </div>
+                    </div> -->
                 </div>
                 <div
                     class="col-3 border ms-3 p-3 rounded-2 shadow-sm d-flex flex-column justify-content-between"
@@ -229,11 +275,11 @@
                     <p class="border-bottom pb-3">Detail Pembayaran</p>
                     <span class="d-flex justify-content-between">
                         <p class="delete">Total Harga Produk</p>
-                        <p class="delete">Rp.2329947</p>
+                        <p class="delete">Rp.<?= $_SESSION['total_bayar'] ?></p>
                     </span>
                     <span class="d-flex justify-content-between">
                         <p class="fw-semibold">Total Pembayaran</p>
-                        <p class="delete">Rp.2329947</p>
+                        <p class="delete">Rp.<?= $_SESSION['total_bayar'] ?></p>
                     </span>
                     <button
                         class="btn btn-brown w-100"
@@ -267,7 +313,7 @@
         ></script>
         <script>
             $('#tambah').click(function () {
-                $('#form-alamat').load('./formAlamat.html');
+                $('#form-alamat').load('./formAlamat.php');
             });
 
             const closeAlamat = () => {

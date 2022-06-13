@@ -1,3 +1,10 @@
+<?php
+    include "../config.php";
+    session_start();
+    $id = $_SESSION['id'];
+    $result = mysqli_query($mysqli, "SELECT * FROM tb_alamat WHERE id_user = '$id'");
+    $dvoucher = mysqli_query($mysqli, "SELECT COUNT(id) FROM tb_detail_voucher WHERE id_user = '$id'");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -72,11 +79,13 @@
                         <table class="w-25">
                             <tr>
                                 <td>Voucher</td>
-                                <td>293849</td>
+                                <td><?php while($detailvoucher = mysqli_fetch_array($dvoucher)){
+                                            echo $detailvoucher[0];
+                                        } ?></td>
                             </tr>
                             <tr>
                                 <td>Cash</td>
-                                <td>23927493</td>
+                                <td><?= $_SESSION['cash'] ?></td>
                             </tr>
                         </table>
                     </div>
@@ -86,26 +95,31 @@
                         <table class="w-50">
                             <tr>
                                 <td class="text-secondary pt-3">Nama</td>
-                                <td class="text-secondary pt-3">Bagus Syam</td>
+                                <td class="text-secondary pt-3"><?= $_SESSION['nama'] ?></td>
                             </tr>
                             <tr>
                                 <td class="text-secondary pt-3">
                                     Tanggal Lahir
                                 </td>
                                 <td class="text-secondary pt-3">
-                                    10 September 2001
+                                    <?= $_SESSION['tgl_lahir'] ?>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-secondary pt-3">
                                     Jenis Kelamin
                                 </td>
-                                <td class="text-secondary pt-3">Laki - laki</td>
+                                <td class="text-secondary pt-3"><?= $_SESSION['gender'] ?></td>
                             </tr>
                             <tr>
                                 <td class="text-secondary pt-3">Alamat</td>
                                 <td class="text-secondary pt-3">
-                                    Kp. Pasirmuncang
+                                    <?php
+                                        while($alamat = mysqli_fetch_array($result)){
+                                            echo $alamat['alamat'];
+                                            echo "<br>";
+                                        }
+                                    ?>
                                 </td>
                             </tr>
                         </table>
@@ -115,13 +129,13 @@
                             <tr>
                                 <td class="text-secondary pt-3">No</td>
                                 <td class="text-secondary pt-3">
-                                    098829123186
+                                    <?= $_SESSION['notelp'] ?>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="text-secondary pt-3">Email</td>
                                 <td class="text-secondary pt-3">
-                                    bagus@upi.edu
+                                    <?= $_SESSION['email'] ?>
                                 </td>
                             </tr>
                         </table>
@@ -147,8 +161,8 @@
         ></script>
         <script>
             $(document).ready(function () {
-                $('#footer').load('../base/footer.html');
-                $('#header').load('../base/header.html');
+                $('#footer').load('../base/footer.php');
+                $('#header').load('../base/header.php');
             });
 
             $('#foto').click(function () {

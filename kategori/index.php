@@ -101,9 +101,9 @@
             let url = window.location.href;
             const getData = url.split('?')[1].split('=')[1];
             if (getData === 'peralatan') {
-                $('#main').load('../katalog/kategori/peralatan.html');
+                $('#main').load('../katalog/kategori/peralatan.php');
             } else if (getData === 'kopi') {
-                $('#main').load('../katalog/kategori/kopi.html');
+                $('#main').load('../katalog/kategori/kopi.php');
             }
             const modal = (src, name) => {
                 num = 0;

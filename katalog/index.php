@@ -1,3 +1,31 @@
+<?php 
+ 
+include '../config.php';
+ 
+session_start();
+ 
+// if (isset($_SESSION['username'])) {
+//     header("Location: ../home/index.php");
+// }
+$id = $_SESSION['id'];
+$sql = "SELECT id FROM tb_cart WHERE id_user = '$id' ";
+$idcart = mysqli_query($mysqli, $sql);
+
+$idcart1 = mysqli_fetch_array($idcart);
+$idcartt = $idcart1[0];
+
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $sql = "INSERT INTO tb_detail_cart(id_cart,id_barang,jml) VALUES ('$idcartt','$id','1') ";
+    $result = mysqli_query($mysqli, $sql);
+}
+
+$sql = "SELECT * FROM tb_barang";
+$result = mysqli_query($mysqli, $sql);
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -76,7 +104,7 @@
         <div
             class="container-fluid w-100 d-flex justify-content-center flex-column"
         >
-            <div class="row mt-5">
+            <!-- <div class="row mt-5">
                 <div
                     class="container d-flex kategori w-75 justify-content-around"
                 >
@@ -84,9 +112,34 @@
                     <a href="#" id="kopi">Biji Kopi</a>
                     <a href="#" id="peralatan">Peralatan Kopi</a>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row w-100" id="main"></div>
+            <!-- <div class="row w-100" id="main"></div> -->
+
+            <div class="col-lg-12">
+                <div class="d-flex flex-wrap justify-content-center">
+                    <?php
+                        while($barang = mysqli_fetch_array($result)):
+                    ?>
+                    <div
+                        class="card mt-3 me-4 shadow border border-0 mx-5"
+                        style="width: 17rem"
+                    >
+                        <img src="../home/img/kopi1.png" class="card-img-top" alt="" />
+                        <div class="card-body">
+                            <h3 class="card-title"><?= $barang['nama']?></h3>
+                            <p class="card-text"><?= $barang['desc']?></p>
+                            <span class="d-flex justify-content-between">
+                                <h4 class="card-title">IDR <?= $barang['harga']?></h4>
+                                <a class="btn btn-brown" href="?id=<?= $barang['id']?>">
+                                    Beli
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
         </div>
 
         <hr id="copyright w-100" />
@@ -104,10 +157,7 @@
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"
         ></script>
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="./index.js"></script>
     </body>
 </html>

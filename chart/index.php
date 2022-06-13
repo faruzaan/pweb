@@ -1,3 +1,28 @@
+<?php 
+ 
+include '../config.php';
+ 
+session_start();
+
+$iduser = $_SESSION['id'];
+
+$sql = "SELECT id FROM tb_cart WHERE id_user = '$iduser'";
+$result = mysqli_query($mysqli, $sql);
+
+$idcart = mysqli_fetch_array($result);
+$_SESSION['id_cart'] = $idcart[0];
+
+$sql = "SELECT dc.*,tb.* FROM tb_detail_cart dc join tb_barang tb on tb.id = dc.id_barang WHERE id_cart = '$idcart[0]'";
+$result = mysqli_query($mysqli, $sql);
+ 
+$jml_harga = 0;
+
+if (isset($_GET['id_detail'])) {
+    $id = $_GET['id_detail'];
+    $result = mysqli_query($mysqli, "DELETE FROM tb_detail_cart WHERE id=$id");
+    header("Location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,7 +55,7 @@
                     <div class="row border-bottom p-3">
                         <p class="fw-semibold">Keranjang Belanja</p>
                     </div>
-                    <div
+                    <!-- <div
                         class="row p-3 d-flex justify-content-between w-100 border-bottom"
                     >
                         <span class="w-auto">
@@ -44,9 +69,13 @@
                                 >Hapus</a
                             ></label
                         >
-                    </div>
+                    </div> -->
                     <div class="row p-3">
                         <!-- Order -->
+                        <?php while ($hasil = mysqli_fetch_array($result)):?>
+                            <?php 
+                                $jml_harga += $hasil['harga'];   
+                            ?>
                         <div class="row mt-3">
                             <div
                                 class="col-1 d-flex align-items-center justify-content-center p-0"
@@ -62,10 +91,9 @@
                             </div>
                             <div class="col-5 d-flex align-items-center">
                                 <p class="fw-semibold text-warp">
-                                    Morning Machine - Mesin Kapsul (MM730) Black
-                                    free Coffee Capsule 6 Pack
+                                    <?= $hasil['nama'] ?>
                                 </p>
-                            </div>
+                            <!-- </div>
                             <div
                                 class="col-4 d-flex align-items-center justify-content-center"
                             >
@@ -88,57 +116,12 @@
                                     >
                                         +
                                     </button>
-                                </div>
-                                <p class="fs-6 ms-3 m-0">Rp.312387</p>
-                                <i class="bi bi-trash-fill ms-5 delete"></i>
+                                </div> -->
+                                <p class="fs-6 ms-3 m-0">Rp.<?= $hasil['harga'] ?></p>
+                                <a href="?<?= "id_detail=".$hasil[0]; ?>"><i class="bi bi-trash-fill ms-5 delete"></i></a>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div
-                                class="col-1 d-flex align-items-center justify-content-center p-0"
-                            >
-                                <input type="checkbox" name="" id="" />
-                            </div>
-                            <div class="col-2">
-                                <img
-                                    class="order img-fluid"
-                                    src="https://s-ecom.ottenstatic.com/original/624f1478c806d329764988.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="col-5 d-flex align-items-center">
-                                <p class="fw-semibold text-warp">
-                                    Morning Machine - Mesin Kapsul (MM730) Black
-                                    free Coffee Capsule 6 Pack
-                                </p>
-                            </div>
-                            <div
-                                class="col-4 d-flex align-items-center justify-content-center"
-                            >
-                                <div class="d-flex">
-                                    <button
-                                        class="counter rounded-circle"
-                                        id="decres"
-                                    >
-                                        -
-                                    </button>
-                                    <input
-                                        class="mt-auto mb-auto text-dark border-0"
-                                        id="counter"
-                                        readonly
-                                        placeholder="0"
-                                    />
-                                    <button
-                                        class="counter rounded-circle"
-                                        id="increse"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                                <p class="fs-6 ms-3 m-0">Rp.312387</p>
-                                <i class="bi bi-trash-fill ms-5 delete"></i>
-                            </div>
-                        </div>
+                        <?php endwhile;?>
                         <!-- order -->
                     </div>
                 </div>
@@ -149,7 +132,10 @@
                     <p class="border-bottom pb-3">Subtotal(0 Produk)</p>
                     <span class="d-flex justify-content-between">
                         <p class="fw-semibold">Total Harga Produk</p>
-                        <p class="delete">Rp.2329947</p>
+                        <p class="delete">Rp.<?=$jml_harga?></p>
+                        <?php
+                            $_SESSION['total_bayar'] = $jml_harga;
+                        ?>
                     </span>
                     <button
                         class="btn btn-brown w-100"
@@ -181,10 +167,10 @@
             crossorigin="anonymous"
         ></script>
         <script>
-            $('#footer').load('../base/footer.html');
-            $('#header').load('../base/header.html');
+            $('#footer').load('../base/footer.php');
+            $('#header').load('../base/header.php');
             $('#checkout').click(function () {
-                location.href = './checkout/index.html';
+                location.href = './checkout/index.php';
             });
         </script>
     </body>

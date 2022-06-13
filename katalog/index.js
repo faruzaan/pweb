@@ -1,22 +1,22 @@
 $(document).ready(function () {
-    $('#footer').load('../base/footer.html');
-    $('#header').load('../base/header.html');
-    $('#main').load('./kategori/semua.html');
+    $('#footer').load('../base/footer.php');
+    $("#header").load("../base/header.php");
+    $('#main').load('./kategori/semua.php');
 });
 $('#kopi').click(function () {
-    $('#main').load('./kategori/kopi.html');
+    $("#main").load("./kategori/kopi.php");
     $('#kopi').addClass('active-');
     $('#semua').removeClass('active-');
     $('#peralatan').removeClass('active-');
 });
 $('#semua').click(function () {
-    $('#main').load('./kategori/semua.html');
+    $("#main").load("./kategori/semua.php");
     $('#semua').addClass('active-');
     $('#kopi').removeClass('active-');
     $('#peralatan').removeClass('active-');
 });
 $('#peralatan').click(function () {
-    $('#main').load('./kategori/peralatan.html');
+    $("#main").load("./kategori/peralatan.php");
     $('#peralatan').addClass('active-');
     $('#kopi').removeClass('active-');
     $('#semua').removeClass('active-');
